@@ -1,0 +1,128 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+#form-container-login{
+    display: none;
+}
+.form-container{
+    box-sizing: border-box;
+    margin: 5% auto;
+    width: 562px;
+    height: 525px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+.exit{
+    width: 32px;
+    float: right;
+    font-size: 35px;
+    padding-right: 10px;
+    color:#000000;
+    cursor: pointer;
+}
+.reg-title{
+    padding-top: 80px;
+    padding-bottom: 30px;
+   
+    width: 100%;
+   text-align: center;
+    
+} 
+.reg-title h3{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+     margin: 0;
+}
+.form{
+padding: 0px 113px 40px 113px;
+}
+.lbl{
+    font-family: 'Inter', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+}
+.form-input{
+    box-sizing: border-box;
+margin-top: 5px;
+margin-bottom: 15px;
+width: 338px;
+height: 45px;
+border: 1px solid #000000;
+border-radius: 10px;
+padding: 0 5px;
+font-family: 'Inter', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 15px;
+}
+input[type="submit"]{
+    width: 338px;
+height: 45px;
+
+margin: 15px 0;
+background: #5EA9C9;
+border-radius: 10px;
+font-family: 'Inter', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 22px;
+color: #FFFFFF;
+cursor:pointer;
+}
+input[type="submit"]:hover{
+    background: #4682B4;
+    border: 1px solid #4682B4;
+}
+
+#to-login-form,
+#to-signup-form{
+    font-family: 'Inter', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+text-decoration-line: underline;
+border:none;
+background: #fff;
+color: #000000;
+width: 100%;
+cursor:pointer;
+}
+#form-container-login{
+    display: none;
+}
+#form-container-signup{
+    display: block;
+}
+.msg-div{
+    position:fixed;
+    top:5%;
+    right: 0;
+    width: 150px;
+    height: 50px;
+    background: #8cb3d3;
+    border: 1px solid #4682B4;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color:black;
+    transition: 0.5s;
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+}
+.msg-active{
+    transform: translateX(0%);
+}
