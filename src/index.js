@@ -58,8 +58,8 @@ app.use(express.static(__dirname));
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, '/index.html'));
 });
-app.listen(process.env.NETLIFY, function () {
-  //console.log(`Server listens http://${host}:${port}`);
+app.listen(process.env.PORT || port, function () {
+  console.log(`Server listens http://${host}:${port}`);
 });
 
 module.exports = app;
