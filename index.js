@@ -4,8 +4,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 const cookieParser = require('cookie-parser');
-const mongooseConnect = require('./connection/mongoDB.js');
-const loginRouter = require('./routes/loginRoutes.js');
+const mongooseConnect = require('./src/connection/mongoDB.js');
+const loginRouter = require('./src/routes/loginRoutes.js');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 
@@ -17,7 +17,7 @@ const cluster = 'cluster0.9aosbft.mongodb.net';
 
 const app = express();
 const host = 'localhost';
-const port = '8000';
+const port = process.env.PORT || '8000';
 
 const corsOptions = {
   origin: 'http://127.0.0.1:5501',
@@ -58,8 +58,8 @@ app.use(express.static(__dirname));
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, '/index.html'));
 });
-app.listen(process.env.PORT || port, function () {
-  console.log(`Server listens http://${host}:${port}`);
+app.listen(port, function () {
+  console.log(`Server listens ${port}`);
 });
 
 module.exports = app;
