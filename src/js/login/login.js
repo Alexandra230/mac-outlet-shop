@@ -1,7 +1,7 @@
 import { loadItems } from '../items/loadItems.js';
 //import { findItems } from '../main.js';
 const LOCALHOST = 'http://localhost:8000/';
-const HEROKU = 'https://mac-outlet-shop-new.herokuapp.com/';
+const NETLIFY = 'https://sparkly-rugelach-f65699.netlify.app/';
 let shop = document.getElementById('wrapper');
 let tokenUser;
 let loginForm = document.getElementById('form-container-login');
@@ -15,7 +15,7 @@ async function sendForm(e) {
   let password = document.getElementById('password-login').value;
 
   const xhr = new XMLHttpRequest();
-  xhr.open('POST', `${HEROKU}users/login`, true);
+  xhr.open('POST', `${NETLIFY}users/login`, true);
 
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 

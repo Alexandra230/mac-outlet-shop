@@ -1,12 +1,12 @@
 import { main } from '../main.js';
 const LOCALHOST = 'http://localhost:8000/';
-const HEROKU = 'https://mac-outlet-shop-new.herokuapp.com/';
+const NETLIFY = 'https://sparkly-rugelach-f65699.netlify.app/';
 async function loadItems(t) {
   let token = t;
   let items = [];
   let xhr = new XMLHttpRequest();
 
-  xhr.open('GET', `${HEROKU}users/cards`);
+  xhr.open('GET', `${NETLIFY}users/cards`);
   xhr.setRequestHeader('x-access-token', token);
   xhr.onreadystatechange = () => {
     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
