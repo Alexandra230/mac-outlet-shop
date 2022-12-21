@@ -4,8 +4,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 const cookieParser = require('cookie-parser');
-const mongooseConnect = require('./src/connection/mongoDB.js');
-const loginRouter = require('./src/routes/loginRoutes.js');
+const mongooseConnect = require('./connection/mongoDB.js');
+const loginRouter = require('./routes/loginRoutes.js');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 
@@ -58,6 +58,7 @@ app.use(express.static(__dirname));
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, '/index.html'));
 });
+
 app.listen(port, function () {
   console.log(`Server listens ${port}`);
 });
