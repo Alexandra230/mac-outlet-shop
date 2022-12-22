@@ -11,10 +11,6 @@ const MongoDBStore = require('connect-mongodb-session')(session);
 
 const MAX_AGE = 1000 * 60 * 60 * 3; // 3hrs
 
-const username = encodeURIComponent('sasha5l239');
-const password = encodeURIComponent('6BSsfHtIpa8raMQB');
-const cluster = 'cluster0.9aosbft.mongodb.net';
-
 const app = express();
 const host = 'localhost';
 const port = process.env.PORT || '8000';
@@ -26,15 +22,11 @@ const corsOptions = {
 
 mongoose.Promise = global.Promise;
 mongooseConnect();
-// mongoose.connect(`mongodb+srv://${username}:${password}@${cluster}/?retryWrites=true&w=majority`, {
-//   useNewUrlParser: true,
-// });
 
 const mongoDBstore = new MongoDBStore({
-  uri: `mongodb+srv://${username}:${password}@${cluster}/?retryWrites=true&w=majority`,
+  uri: `mongodb+srv://${process.env.DBUSERNAME}:${process.env.DBPASSWORD}@${process.env.DBCLUSTER}/?retryWrites=true&w=majority`,
   collection: 'userSessions',
 });
-
 app.use(
   session({
     secret: 'a1s2d3f4g5h6',

@@ -1,5 +1,5 @@
 const LOCALHOST = 'http://localhost:8000/';
-const NETLIFY = 'https://sparkly-rugelach-f65699.netlify.app/';
+const NETLIFY = 'https://app4-eag7.onrender.com/';
 let signupForm = document.getElementById('form-container-signup');
 
 let loginForm = document.getElementById('form-container-login');

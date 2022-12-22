@@ -1,6 +1,6 @@
 import { main } from '../main.js';
 const LOCALHOST = 'http://localhost:8000/';
-const NETLIFY = 'https://sparkly-rugelach-f65699.netlify.app/';
+const NETLIFY = 'https://app4-eag7.onrender.com/';
 async function loadItems(t) {
   let token = t;
   let items = [];

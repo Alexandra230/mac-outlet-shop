@@ -1,6 +1,6 @@
 import { LocalStorageService } from './localStorageService.js';
 const LOCALHOST = 'http://localhost:8000/';
-const NETLIFY = 'https://sparkly-rugelach-f65699.netlify.app/';
+const NETLIFY = 'https://app4-eag7.onrender.com/';
 
 const ls = new LocalStorageService();
 let openSort = document.getElementById('open-sort');
