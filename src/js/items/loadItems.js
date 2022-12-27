@@ -6,7 +6,7 @@ async function loadItems(t) {
   let items = [];
   let xhr = new XMLHttpRequest();
 
-  xhr.open('GET', `${NETLIFY}users/cards`);
+  xhr.open('GET', `${LOCALHOST}users/cards`);
   xhr.setRequestHeader('x-access-token', token);
   xhr.onreadystatechange = () => {
     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {

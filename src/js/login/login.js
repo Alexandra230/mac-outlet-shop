@@ -15,7 +15,7 @@ async function sendForm(e) {
   let password = document.getElementById('password-login').value;
 
   const xhr = new XMLHttpRequest();
-  xhr.open('POST', `${NETLIFY}users/login`, true);
+  xhr.open('POST', `${LOCALHOST}users/login`, true);
 
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
@@ -46,7 +46,6 @@ async function sendForm(e) {
           ls.set('user', user);
         }
         let storageUser = ls.get(`${res.userId}`) || [];
-
         loadItems(tokenUser);
         //findItems(tokenUser);
       }

@@ -1,14 +1,13 @@
 const UserShema = require('../models/userShema.js');
 const bcrypt = require('bcrypt');
-const express = require('express');
 const jwt = require('jsonwebtoken');
 const dotenv = require('dotenv');
 const items = require('../models/itemsShema.js');
 dotenv.config();
+let options = {
+  expiresIn: 60 * 60,
+};
 function generateAccessToken(username) {
-  let options = {
-    expiresIn: 60 * 60,
-  };
   return jwt.sign(username, process.env.TOKEN_SECRET, options);
 }
 module.exports.signUp = async function (req, res) {
