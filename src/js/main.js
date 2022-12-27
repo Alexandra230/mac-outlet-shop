@@ -1,6 +1,6 @@
 import { LocalStorageService } from './localStorageService.js';
 const LOCALHOST = 'http://localhost:8000/';
-const NETLIFY = 'https://app4-eag7.onrender.com/';
+const RENDER = 'https://app4-eag7.onrender.com/';
 
 const ls = new LocalStorageService();
 let openSort = document.getElementById('open-sort');
@@ -16,7 +16,7 @@ function main(items) {
   findInput.addEventListener('input', async function () {
     let t = ls.get('token');
     let xhr = new XMLHttpRequest();
-    xhr.open('GET', `${LOCALHOST}users/name?name=${findInput.value}`);
+    xhr.open('GET', `${RENDER}users/name?name=${findInput.value}`);
     xhr.setRequestHeader('x-access-token', t);
     xhr.onreadystatechange = () => {
       if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {

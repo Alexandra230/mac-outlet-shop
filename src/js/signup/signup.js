@@ -1,5 +1,5 @@
 const LOCALHOST = 'http://localhost:8000/';
-const NETLIFY = 'https://app4-eag7.onrender.com/';
+const RENDER = 'https://app4-eag7.onrender.com/';
 let signupForm = document.getElementById('form-container-signup');
 
 let loginForm = document.getElementById('form-container-login');
@@ -13,7 +13,7 @@ async function sendForm(e) {
   let password = document.getElementById('password-signup').value;
 
   const xhr = new XMLHttpRequest();
-  xhr.open('POST', `${LOCALHOST}users/signup`, true);
+  xhr.open('POST', `${RENDER}users/signup`, true);
 
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
