@@ -1,0 +1,140 @@
+
+@keyframes render {
+    0% {
+      stroke-dasharray: 0 100;
+    }
+  }
+  
+  .canvas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .legend {
+    max-width: 250px;
+    width: 180px;
+    margin-left: 30px;
+  }
+  
+  .title {  
+    font-size: 18px;
+    line-height: 21px;
+    color: #000;
+  }
+  
+  .caption-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .caption-item {
+    position: relative;
+  
+    margin: 20px 0;
+    padding-left: 30px;
+    font-size: 16px;
+    line-height: 18px;
+    color: #000;  
+    cursor: pointer;
+  }
+  
+  .caption-item:hover {
+    opacity: 0.8;
+    font-size: 20px;
+    
+  }
+  
+  .caption-item::before {
+    content: "";
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 20px;
+    height: 20px;
+    
+    border-radius: 8px;
+  }
+  
+  .caption-item:nth-child(1)::before {
+    background-color: #0e49b5;
+  }
+  
+  .caption-item:nth-child(2)::before {
+    background-color: #963daf;
+  }
+  
+  .caption-item:nth-child(3)::before {
+    background-color: #db2e92;
+  }
+  
+  .caption-item:nth-child(4)::before {
+    background-color: #ff426a;
+  }
+  
+  .caption-item:nth-child(5)::before {
+    background-color: #ff723e;
+  }
+  
+  .caption-item:nth-child(6)::before {
+    background-color: #ffa600;
+  }
+  
+ 
+  
+  .chart {
+    min-width: 500px;
+  }
+  
+  .unit {
+    fill: none;
+    stroke-width: 10;
+    cursor: pointer;
+    
+    animation-name: render;
+    animation-duration: 1.5s;
+    transition-property: all; 
+    transition-duration: 1.5s;
+  }
+  
+  .unit:hover,
+  .hovered {
+    opacity: 0.9;
+    stroke-width: 12;
+    font-size: 20px;
+  }
+ 
+  .unit:nth-child(1) {
+    stroke: #0e49b5;;
+    
+  }
+  
+  .unit:nth-child(2) {
+    stroke: #963daf;
+   
+  }
+  
+  .unit:nth-child(3) {
+    stroke: #db2e92;
+    
+  }
+  
+  .unit:nth-child(4) {
+    stroke: #ff426a;
+  
+  }
+  
+  .unit:nth-child(5) {
+    stroke: #ff723e;
+    
+  }
+  
+  .unit:nth-child(6) {
+    stroke: #ffa600;
+   
+  }
+  
+  
