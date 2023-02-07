@@ -13,7 +13,7 @@ async function sendForm(e) {
   let password = document.getElementById('password-signup').value;
 
   const xhr = new XMLHttpRequest();
-  xhr.open('POST', `${LOCALHOST}users/signup`, true);
+  xhr.open('POST', `${RENDER}users/signup`, true);
 
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
