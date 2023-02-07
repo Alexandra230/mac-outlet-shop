@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/reg.css" />
+    <link rel="stylesheet" href="css/diagram.css" />
     <title>MacOutlet</title>
   </head>
   <body>
@@ -119,13 +120,37 @@
               <button id="open-sort" class="sort-item">
                 <img src="./img/icons/filter.svg" alt="filter" />
               </button>
-              <button class="sort-item">
-                <img src="./img/icons/settings.svg" alt="settings" />
+              <button id="open-diagram" class="sort-item">
+                <img src="./img/icons/diagram.svg" alt="settings" />
               </button>
             </div>
           </div>
         </section>
-        <section class="section-items">
+        <section class="section-diagram" id="section-diagram" style="display: none">
+          <div class="canvas">
+            <div class="legend">
+              <p class="title">Sales Statistics</p>
+              <ul class="caption-list">
+                <li class="caption-item">Mac</li>
+                <li class="caption-item">Apple Watch</li>
+                <li class="caption-item">iPad</li>
+                <li class="caption-item">iPhone</li>
+                <li class="caption-item">TV</li>
+                <li class="caption-item">AirPods</li>
+              </ul>
+            </div>
+
+            <svg class="chart" width="500" height="500" viewbox="0 0 50 50">
+              <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+              <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+              <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+              <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+              <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+              <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+            </svg>
+          </div>
+        </section>
+        <section class="section-items" id="section-items">
           <div id="cont-show" class="container filter-card-cont">
             <div id="sort-fields" class="sort-fields">
               <div class="price-field row" id="price-field">
@@ -212,5 +237,6 @@
     <script type="module" src="./js/login/closeandswitchI.js"></script>
     <script type="module" src="./js/login/showPassLogin.js"></script>
     <script type="module" src="./js/signup/showPassReg.js"></script>
+    <script type="module" src="./js/diagram.js"></script>
   </body>
 </html>

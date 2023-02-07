@@ -16,7 +16,7 @@ function main(items) {
   findInput.addEventListener('input', async function () {
     let t = ls.get('token');
     let xhr = new XMLHttpRequest();
-    xhr.open('GET', `${RENDER}users/name?name=${findInput.value}`);
+    xhr.open('GET', `${LOCALHOST}users/name?name=${findInput.value}`);
     xhr.setRequestHeader('x-access-token', t);
     xhr.onreadystatechange = () => {
       if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
@@ -361,10 +361,10 @@ function main(items) {
   <p>Price: <b>${n.price}</b> $</p>
   <button class="addbtn" >Add to cart</button>
    <div class="card-footer"><div class="col1"><img class="like" src="./img/icons/like_filled.png" alt="like" /><p><b>
-    ${n.orderInfo_reviews} %</b> Positive reviews</p><p>Above aletage</p>  </div>
-  <div class="col2"> <p><b>${Math.round(
-    Math.random() * (1000 - 300) + 300,
-  )}</b></p> <p>orders</p> </div>  </div></div></div></div> </div>
+    ${n.orderInfo_reviews} %</b> Positive reviews</p>  </div>
+  <div class="col2 ${n.category}"> <p><b>${Math.round(
+            Math.random() * (500 - 50) + 50,
+          )}</b></p> <p> orders</p> </div> </div></div></div></div> </div>
   `,
       )
       .join('');
@@ -399,11 +399,11 @@ function main(items) {
     text +=
       ' <div class="modal-footer"><div class="col01"><img class="like" src="./img/icons/like_filled.png" alt="like" /><p><b>' +
       element.orderInfo_reviews +
-      '%</b> Positive reviews</p><p>Above aletage</p>  </div>';
+      '%</b> Positive reviews</p>  </div>';
     text +=
       '<div class="col02"> <p><b>' +
       Math.round(Math.random() * (1000 - 300) + 300) +
-      '</b></p> <p>orders</p> </div>  </div>';
+      '</b></p> <p> orders</p> </div>  </div>';
     text +=
       '<ul class="info-list"> <li class="info-item">Color: <b> ' +
       element.color_0 +
