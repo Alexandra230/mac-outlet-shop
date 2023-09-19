@@ -23,18 +23,32 @@ html{
     box-sizing:inherit;
 }
 body{
+    height: 100vh;
     margin: 0;
     font-family: 'Roboto';
     font-size: 14px;
     line-height: 1.17; 
     color: var(--grey);
+    background: url(https://img2.akspic.ru/crops/4/4/0/9/5/159044/159044-ajpad-apple-ipad_air-ipad_air_4_2020-yabloko-1920x1080.jpg) no-repeat center center; 
+    
+    background-attachment: fixed;
+   
+    
 }
+
 .wrapper{
-    display: none;
     width: 100%;
-    overflow: hidden;
-    position: relative;
+    
+    position: absolute;
+    top: 0;
+    bottom:0;
+    backdrop-filter: blur(100px);
 }
+
+.header{
+    background: #ffffff5d;
+}
+
 img{
     max-width: 100%;
     height: auto;
@@ -86,7 +100,7 @@ h4{
     justify-content: center;
     width: 40px;
     height: 40px;
-    border: 1px solid var(--card-border);
+    border: 1px solid black;
     border-radius:50%;
 
 }
@@ -281,13 +295,60 @@ border-radius: 5px;
 .header-wrap{
     display: flex;
     padding-top: 8px;
+    padding-bottom: 8px;
     justify-content: space-between;
     align-items: center;
 }
 .banner-info{
     text-align: center;
-    padding: 180px 0 175px 0;;
+  
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
+
+ .btn {
+    width: 15%;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.74);
+    border: none;
+    color: black;
+    padding: 20px 34px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: 'Roboto';
+    text-decoration: none;
+    color: black;
+    font-size: 28px;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin-top: 100px;
+    border: 1px solid black;
+    border-radius:30px;
+    -webkit-border-radius:30px;
+    -moz-border-radius:30px;
+    -ms-border-radius:30px;
+    -o-border-radius:30px;
+}
+.btn img{
+    width: 80%;
+}
+.btn p{
+    padding: 10px;
+}
+  .btn:hover {
+    background-color: rgb(255, 255, 255);
+} 
+ 
+  
 .search-settings{
     display: flex;
     align-items:center;
@@ -295,6 +356,7 @@ border-radius: 5px;
 box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
 border-radius: 5px;
 padding: 20px 25px 20px 23px;
+background-color:#fff;
 }
 input:focus {outline: 0;}
 input{
@@ -400,6 +462,7 @@ input[type='text'],input[type='password']{
         max-width: 700px;
         margin: 0 auto;
         margin-bottom: 35px;
+        
     }
     .card{
         padding-top: 15px;
@@ -408,6 +471,7 @@ input[type='text'],input[type='password']{
         box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
         border-radius: 5px;
         margin-bottom: 50px;
+        background-color: #fff;
     }
    }
    @media( min-width: 1200px){
@@ -415,6 +479,7 @@ input[type='text'],input[type='password']{
         max-width: 1028px;
         margin: 0 auto;
         margin-bottom: 35px;
+        
     }
     .card{
         padding-top: 15px;
@@ -423,6 +488,7 @@ input[type='text'],input[type='password']{
         box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
         border-radius: 5px;
         margin-bottom: 50px;
+        background-color: #fff;
     }    
    }
    .modal {

@@ -13,9 +13,9 @@ router.post('/signup', urlencodedParser, signUp);
 
 router.post(`/login`, urlencodedParser, logIn);
 
-router.get('/cards', auth, showCards);
+router.get('/cards/:type', showCards);
 
-router.get('/name', auth, findCard);
+router.get('/name', findCard);
 
 // router.get('/cart', async (req, res) => {
 //   let userId = req.query.cart;

@@ -224,48 +224,7 @@ function main(items) {
   }
   ///////////////////////////////////////////////////
   /////////////////////////////////////////////
-  let osSort = document.getElementById('os-sort');
-  let osShow = document.getElementById('os-show');
-  let osField = document.getElementById('os-field');
 
-  // osField.addEventListener('click', function () {
-  //   if (osShow.getAttribute('class') === 'arrow-right' && osSort.style.display === 'none') {
-  //     osShow.setAttribute('class', 'arrow-bottom');
-  //     osSort.style.display = 'block';
-  //   } else {
-  //     osShow.setAttribute('class', 'arrow-right');
-  //     osSort.style.display = 'none';
-  //   }
-  // });
-
-  osShow.addEventListener('click', function () {
-    if (osShow.getAttribute('class') === 'arrow-right' && osSort.style.display === 'none') {
-      osShow.setAttribute('class', 'arrow-bottom');
-      osSort.style.display = 'block';
-    } else {
-      osShow.setAttribute('class', 'arrow-right');
-      osSort.style.display = 'none';
-    }
-  });
-
-  let osDiv = document.getElementById('os-sort');
-
-  for (let i = 0; i < Object.keys(os).length; i++) {
-    let check = document.createElement('input');
-    let div = document.createElement('div');
-    div.setAttribute('class', 'os-div');
-    check.type = 'checkbox';
-    let label = document.createElement('label');
-
-    check.id = `${Object.keys(os)[i]}`;
-    check.value = `${Object.keys(os)[i]}`;
-    label.setAttribute('for', `${Object.keys(os)[i]}`);
-    label.innerText = `${Object.keys(os)[i]}`;
-
-    div.appendChild(check);
-    div.appendChild(label);
-    osDiv.appendChild(div);
-  }
   /////////////////////////////////////////////
   /////////////////////////////////////////////
   let displaySort = document.getElementById('display-sort');
@@ -308,13 +267,6 @@ function main(items) {
       priceMax = document.querySelector('#to-price').value,
       itemColor = [...filters.querySelectorAll('#color-sort input:checked')].map((n) => n.value),
       itemMemory = [...filters.querySelectorAll('#memory-sort input:checked')].map((n) => n.value),
-      itemOs = [...filters.querySelectorAll('#os-sort input:checked')].map((n) => {
-        if (n.value == 'other') {
-          return '';
-        } else {
-          return n.value;
-        }
-      }),
       itemDisplay = [...filters.querySelectorAll('#display-sort input:checked')].map((n) => {
         return { id: n.value, from: n.value.split('-')[0], to: n.value.split('-')[1] };
       });
@@ -337,7 +289,6 @@ function main(items) {
         (!priceMax || priceMax >= n.price) &&
         (!itemColor.length || isExist) &&
         (!itemMemory.length || itemMemory.find((el) => el == String(n.storage))) &&
-        (!itemOs.length || itemOs.includes(n.os)) &&
         (!itemDisplay.length || isDisplayExist !== -1)
       );
     });

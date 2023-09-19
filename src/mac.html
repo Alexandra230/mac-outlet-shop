@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/diagram.css" />
+    <title>MacOutlet</title>
+  </head>
+  <body>
+    <div class="wrapper" id="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header-wrap">
+            <div>
+              <a href="/" class="logo">
+                <img src="./img/icons/logo.svg" alt="MacOutlet" />
+              </a>
+            </div>
+            <div class="cart" id="cart">
+              <img src="./img/icons/cart.svg" width="20px" alt="cart" />
+            </div>
+          </div>
+        </div>
+        <div id="close-cart" class="close-cart">
+          <div class="modal-cart-section" id="modal-cart-section">
+            <div class="cart-container">
+              <div class="cart-header">
+                <h3>Shopping Cart</h3>
+                <p>Checkout is almoust done!</p>
+              </div>
+              <div class="cart-main" id="cart-main">
+                <ul id="cart-list" class="cart-list"></ul>
+              </div>
+              <div class="cart-footer">
+                <div class="cart-footer-item">
+                  <span>Total amount:</span>
+                  <span id="totalAmount">0</span><span><b> ptc.</b></span>
+                </div>
+                <div class="cart-footer-item">
+                  <span>Total price:</span>
+                  <span id="totalPrice">0</span><span> $</span>
+                </div>
+              </div>
+              <button class="addbtn">Buy now</button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <section class="section-sort">
+          <div class="container">
+            <div class="search-settings">
+              <div id="search-form" class="search-form">
+                <input
+                  class="search"
+                  type="button"
+                  style="background: url(./img/icons/search.svg) no-repeat"
+                />
+                <input
+                  type="text"
+                  name="searchText"
+                  id="searchText"
+                  placeholder="Enter device name..."
+                />
+              </div>
+              <button id="open-sort" class="sort-item">
+                <img src="./img/icons/filter.svg" alt="filter" />
+              </button>
+              <button id="open-diagram" class="sort-item">
+                <img src="./img/icons/diagram.svg" alt="settings" />
+              </button>
+            </div>
+          </div>
+        </section>
+        <section class="section-diagram" id="section-diagram" style="display: none">
+          <div class="canvas">
+            <div class="legend">
+              <p class="title">Sales Statistics</p>
+              <ul class="caption-list">
+                <li class="caption-item">Mac</li>
+                <li class="caption-item">Apple Watch</li>
+                <li class="caption-item">iPad</li>
+                <li class="caption-item">iPhone</li>
+                <li class="caption-item">TV</li>
+                <li class="caption-item">AirPods</li>
+              </ul>
+            </div>
+
+            <svg class="chart" width="500" height="500" viewbox="0 0 50 50">
+              <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+              <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+              <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+              <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+              <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+              <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+            </svg>
+          </div>
+        </section>
+        <section class="section-items" id="section-items">
+          <div id="cont-show" class="container filter-card-cont">
+            <div id="sort-fields" class="sort-fields">
+              <div class="price-field row" id="price-field">
+                <h4>Price</h4>
+                <span id="price-show" class="arrow-right"></span>
+              </div>
+              <div id="price-sort" class="price-sort cont">
+                <div class="price-fields">
+                  <span>From: </span>
+                  <input type="number" id="from-price" class="from-price" />
+                </div>
+                <div class="price-fields">
+                  <span>To: </span>
+                  <input type="number" id="to-price" class="to-price" />
+                </div>
+              </div>
+              <div class="color-field row" id="color-field">
+                <h4>Color</h4>
+                <span id="color-show" class="arrow-right"></span>
+              </div>
+              <div id="color-sort" class="color-sort cont">
+                <div id="color-flex" class="color-flex"></div>
+              </div>
+              <div class="memory-field row" id="memory-field">
+                <h4>Memory</h4>
+                <span id="memory-show" class="arrow-right"></span>
+              </div>
+              <div id="memory-sort" class="memory-sort cont"></div>
+              <div class="os-field row" id="os-field">
+                <h4>Display</h4>
+                <span id="display-show" class="arrow-right"></span>
+              </div>
+              <div id="display-sort" class="display-sort cont">
+                <div>
+                  <input type="checkbox" name="2-5" id="2-5" value="2-5" /><label for="2-5"
+                    >2-5 inch</label
+                  >
+                </div>
+                <div>
+                  <input type="checkbox" name="5-7" id="5-7" value="5-7" /><label for="5-7"
+                    >5-7 inch</label
+                  >
+                </div>
+                <div>
+                  <input type="checkbox" name="7-12" id="7-12" value="7-12" /><label for="7-12"
+                    >7-12 inch</label
+                  >
+                </div>
+                <div>
+                  <input type="checkbox" name="12-16" id="12-16" value="12-16" /><label for="12-16"
+                    >12-16 inch</label
+                  >
+                </div>
+                <div>
+                  <input type="checkbox" name="16+" id="16+" value="16-100" /><label for="16+"
+                    >+16 inch</label
+                  >
+                </div>
+              </div>
+            </div>
+            <div id="cards" class="cards-container"></div>
+            <div id="modalBack" class="modal">
+              <div id="modal" class="modal-container"></div>
+            </div>
+          </div>
+        </section>
+        <div id="msg-div" class="msg-div">
+          <p>Added to cart</p>
+        </div>
+      </main>
+    </div>
+
+    <!--    <script type="module" src="js/items.js"></script>
+    <script type="module" src="js/localStorageService.js"></script>-->
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/mac.js"></script>
+    <script type="module" src="./js/diagram.js"></script>
+  </body>
+</html>

@@ -47,10 +47,27 @@ app.use(express.json());
 app.use(cookieParser());
 app.use('/users', loginRouter);
 app.use(express.static(__dirname));
-app.get('*', function (req, res) {
+app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '/index.html'));
 });
-
+app.get('/mac', function (req, res) {
+  res.sendFile(path.join(__dirname, '/mac.html'));
+});
+app.get('/iphone', function (req, res) {
+  res.sendFile(path.join(__dirname, '/iphone.html'));
+});
+app.get('/ipad', function (req, res) {
+  res.sendFile(path.join(__dirname, '/ipad.html'));
+});
+app.get('/airpods', function (req, res) {
+  res.sendFile(path.join(__dirname, '/airpods.html'));
+});
+app.get('/tv', function (req, res) {
+  res.sendFile(path.join(__dirname, '/tv.html'));
+});
+app.get('/watch', function (req, res) {
+  res.sendFile(path.join(__dirname, '/watch.html'));
+});
 app.listen(port, function () {
   console.log(`Server listens ${port}`);
 });

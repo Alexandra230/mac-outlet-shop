@@ -69,13 +69,12 @@ module.exports.logIn = async function (req, res) {
 };
 module.exports.showCards = async function (req, res) {
   res.status(200);
-  res.send(
-    await items
-      .find((err, data) => {
-        return data;
-      })
-      .clone(),
-  );
+  let type = req.params['type'].substring(1);
+  if (type == 'watch') {
+    res.send(await items.find({ category: 'Watch' }).clone());
+  } else {
+    res.send(await items.find({ category: type }).clone());
+  }
 };
 module.exports.findCard = async function (req, res) {
   let valueName = req.query.name;
